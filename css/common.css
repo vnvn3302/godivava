@@ -1,0 +1,88 @@
+@charset "UFT-8";
+
+
+body, textarea, input {font-family: 'SUIT-Regular','Pretendard-Regular', '나눔고딕', '맑은 고딕', 'Malgun Gothic', 'Apple SD Gothic eo', '돋움', 'Dotum', 'sans-serif';}
+
+body {
+  --title1:80px;
+  --title2:42px;
+  --title3:40px;
+  --title4:35px;
+  --title5:32px;
+  --title6:25px;
+  --nav:20px;
+  --link:23px;
+  --foot:18px;
+
+  --colorTit1:#ffbeb0;
+  --colorTit2:#fef9e3;
+  --colorTit3:#b86900;
+  --colornav:#fff9f0;
+
+
+
+
+}
+
+.pc {display: block;}
+.mo {display: none;}
+
+body.on {height: 100%; overflow: hidden; }
+
+.centerbox1600 {max-width: 1600px; margin: 0 auto;}
+
+html {font-size: 20px;}
+
+
+header {position: absolute; top: 0; left: 0; width: 100%; z-index: 15; background: #7F2301; }
+header .centerbox1600 {display: flex; justify-content: space-between; align-items: center; height: 100%;}
+
+header nav .gnb {display: flex;}
+header nav .gnb li {font-size: 1rem; margin: 1em 0;}
+header nav .gnb li a { color: #fff; font-family: 'SUIT-Light'; padding: 1em 1.4vw; display: block; white-space: nowrap;}
+
+header .hamburger {position: absolute; width: 30px; height: 30px; top: 10px; right: 20px; z-index: 22;}
+header .hamburger span {position: absolute; width: 20px; height: 2px; background: #fff; left: 5px; top: 14px; }
+
+header .hamburger span::before,
+header .hamburger span::after {content:''; position: absolute; width: 100%; height: 100%; background: #fff; z-index: 22; }
+header .hamburger span::before {top: -6px;}
+header .hamburger span::after {top: 6px; width: 10px;}
+
+header .hamburger.on span {background: rgba(0,0,0,0);}
+header .hamburger.on span:before {transform: rotate(45deg); background: #000; top: 0;}
+header .hamburger.on span:after {transform: rotate(135deg); background: #000; top: 0; width: 20px; }
+
+header .nav_box {position: absolute; width: 100%; height: 550px; background: linear-gradient(rgba(127,35,1,1),rgba(127,35,1,0.3)); left: 0; top: 100%; backdrop-filter: blur(15px); display: none;}
+header .menu_box {height: 100%; display: flex; justify-content: center; align-items: flex-start; margin-top: 50px;}
+header .menu_box .menu {display: flex;} 
+header .menu_box .menu > li {font-size: 24px; /* font-size: 1.2rem; */ font-family: 'SUIT-Regular'; position: relative; }
+header .menu_box .menu > li > a {color: #CEB372;  padding: 30px 40px; /* padding: 1.5em 1.75em; */ display: block;}
+
+header .menu_box .menu > li .submenu {position: absolute; width: 100%; }
+header .menu_box .menu > li .submenu li {font-size: 18px; font-family: 'SUIT-Light';  text-align: center; line-height: 3; border-radius: 5px; transition: 0.1s;}
+header .menu_box .menu > li .submenu li:hover {background: #bea362;}
+header .menu_box .menu > li .submenu li a {color: #fff; display: block;}
+
+/* subpage */
+#visual_sub {height: 760px; background: url('../images/slide1.png'); background-size: cover; overflow: hidden; display: flex; justify-content: center; align-items: center;}
+#visual_sub .text strong {font-size: 80px; font-family: 'SUIT-ExtraBold'; color: var(--colorTit1); font-weight: normal;}
+
+
+.snb_box {max-width: 1320px; height: 4.45em; margin:0 auto; background: #fff; transform: translateY(-100%);  font-size: 18px;}
+.snb_box .snb {height: 100%; display: flex; align-items: center; justify-content: center;} 
+.snb_box .snb li {height: 100%; }
+.snb_box .snb li a {height: 100%; padding: 0 2.1vw; display: flex; align-items: center;white-space: nowrap;}
+.snb_box .snb li.active a span {border-bottom: 1px solid #B86900;}
+
+.contents_box {padding-bottom: 5.9vw; }
+.contents_box h2 {font-size: 35px; margin-bottom: 2vw; text-align: center; color: #B86900; /* text-transform: uppercase; */} 
+.contents_box p {text-align: center; font-size: 32px; font-family: 'SUIT-Bold';}
+
+.content {max-width: 1045px; margin: 0 auto; word-break: keep-all;}
+
+.tabmenu {margin-bottom: 3.2vw;}
+.tabmenu ul {display: flex; justify-content: center;}
+.tabmenu ul li {font-size: 23px; }
+.tabmenu ul li a {color: rgba(184,105,0,0.4); padding: 20px 35px; font-family: 'SUIT-ExtraBold';;}
+.tabmenu ul li.active a {color: rgba(184,105,0,1);}

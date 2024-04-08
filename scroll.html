@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤량</title>
+    <style>
+        * {margin: 0; padding: 0; }
+        body {height: 5000px;}
+        /* .main_position_bar {position: fixed; width:10px; height: 200px; background: #aaa; z-index: 777; left: 50px; top: 50%; transform: translateY(-50%);}
+        .main_position_bar span {display: block; height: 25%; width: 20px;  margin-left: -1px; background: #A85010; position: absolute; top: 0; transition: 0.5s;} */
+
+        .main_position_bar {position: fixed; width:100vw; height: 5px; background: #aaa; z-index: 777; left: 0; top: 0; }
+        .main_position_bar span {display: block; height: 20px; width: 0; background: #A85010; position: absolute; top: 0; transition: 0.5s;}
+
+    </style>
+</head>
+<body>
+    <div class="main_position_bar">
+        <span></span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            // let scrT = $(window).scrollTop(); 
+            // let winH = $(window).height();
+            // let docH = $(document).height(); /* 전체높이 */
+            // // docH:grayH = scrT:span
+
+            // let dap = (150 * scrT) / docH
+
+            // $('.main_position_bar span').css({top:dap + '%'})
+            // console.log(scrT)
+            // alert(docH)
+
+            let scrT = $(window).scrollTop(); 
+            let winH = $(window).height();
+            let barH = $('.main_position_bar').width();
+            let docH = $(document).height(); /* 전체높이 */
+            let bi = (barH / (docH - winH))
+            let dap = scrT * bi
+
+            $('.main_position_bar span').css({width:dap})
+        })
+    </script>
+</body>
+</html>
